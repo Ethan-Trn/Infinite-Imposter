@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './CategorySelect.css';
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 interface Props {
   players: string[];
   onWordsReady: (words: string[], category: string) => void;
@@ -16,7 +16,7 @@ export default function CategorySelect({ players, onWordsReady }: Props) {
   const [cachedCategories, setCachedCategories] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/category')
+    fetch(`${API_URL}/api/category`)
       .then(r => r.json())
       .then(data => { if (Array.isArray(data)) setCachedCategories(data); })
       .catch(() => {});
