@@ -29,7 +29,7 @@ export default function CategorySelect({ players, onWordsReady }: Props) {
     setErrorMsg('');
     setSource(null);
     try {
-      const res = await fetch('http://localhost:3000/api/category', {
+      const res = await fetch(`${API_URL}/api/category`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category: trimmed }),
