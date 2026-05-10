@@ -121,7 +121,7 @@ export default function Voting({ players, imposterIndexes, word, category, onPla
               </div>
               {!votes[voter] && (
                 <div className="vt-suspect-btns">
-                  {players.filter(p => p !== voter).map((suspect, si) => (
+                  {players.filter(p => p !== voter).map((suspect) => (
                     <button
                       key={suspect}
                       className="vt-suspect-btn"
