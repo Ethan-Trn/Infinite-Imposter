@@ -1,0 +1,342 @@
+.vt-bg {
+  min-height: 100vh;
+  background: #1a0a2e;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 20px 60px;
+}
+
+.vt-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.vt-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ── */
+.vt-header {
+  text-align: center;
+}
+
+.vt-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffd93d;
+  margin-bottom: 8px;
+}
+
+.vt-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.vt-category-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Progress card ── */
+.vt-progress-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vt-progress-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.vt-progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.vt-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7b2ff7, #00c9a7);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ── Voters list ── */
+.vt-voters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vt-voter-row {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: vt-fadeSlide 0.3s ease;
+}
+
+.vt-voter-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vt-voter-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.vt-voter-name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 18px;
+  color: white;
+}
+
+.vt-voter-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 1px;
+}
+
+.vt-suspect-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vt-suspect-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.vt-suspect-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.04);
+}
+
+/* ── Reveal button ── */
+.vt-reveal-btn {
+  background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 36px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
+  transition: transform 0.15s;
+  width: 100%;
+  cursor: pointer;
+}
+
+.vt-reveal-btn:hover {
+  transform: scale(1.02) translateY(-2px);
+}
+
+/* ── Result screen ── */
+.vt-outcome-banner {
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: vt-bounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vt-outcome-emoji {
+  font-size: 52px;
+}
+
+.vt-outcome-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 36px;
+  color: white;
+}
+
+.vt-outcome-sub {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.vt-word-reveal-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vt-word-reveal-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.vt-word-reveal-word {
+  font-family: 'Fredoka One', cursive;
+  font-size: 36px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.vt-word-reveal-cat {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Tally ── */
+.vt-tally-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vt-tally-title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 4px;
+}
+
+.vt-tally-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vt-tally-name {
+  width: 120px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vt-imposter-tag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: rgba(255, 107, 107, 0.3);
+  color: #ffc9c9;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.vt-tally-bar-wrap {
+  flex: 1;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.vt-tally-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+  min-width: 4px;
+}
+
+.vt-tally-count {
+  position: absolute;
+  right: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+}
+
+/* ── Play again ── */
+.vt-play-again-btn {
+  background: linear-gradient(135deg, #7b2ff7, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 36px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  box-shadow: 0 8px 32px rgba(123, 47, 247, 0.4);
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.vt-play-again-btn:hover {
+  transform: scale(1.02) translateY(-2px);
+}
+
+/* ── Animations ── */
+@keyframes vt-fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vt-bounceIn {
+  0%   { opacity: 0; transform: scale(0.5); }
+  70%  { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}

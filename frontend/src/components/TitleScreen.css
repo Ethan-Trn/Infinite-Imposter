@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* ── Layout ── */
+.ts-bg {
+  min-height: 100vh;
+  background: #1a0a2e;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+.ts-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ── Stars ── */
+.ts-star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: ts-twinkle 2s infinite alternate;
+}
+
+/* ── Imposter selector ── */
+.ts-imposter-selector {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(10px);
+}
+
+.ts-imposter-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ts-imposter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ts-imposter-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.ts-imposter-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.ts-imposter-btn:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.ts-imposter-count {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  color: #ff6b6b;
+  min-width: 24px;
+  text-align: center;
+}
+
+.ts-imposter-cap {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 1px;
+}
+
+/* ── Title section ── */
+.ts-title-section {
+  text-align: center;
+  padding: 52px 20px 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.ts-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff6b6b;
+  margin-bottom: 12px;
+}
+
+.ts-game-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(52px, 12vw, 88px);
+  line-height: 1;
+  background: linear-gradient(135deg, #fff 0%, #c4b5fd 40%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 24px rgba(123, 47, 247, 0.5));
+  margin-bottom: 10px;
+}
+
+.ts-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+}
+
+.ts-dots-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.ts-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: ts-bounce 1.2s infinite alternate;
+}
+
+/* ── Add button ── */
+.ts-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7b2ff7, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  padding: 16px 36px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  box-shadow: 0 8px 32px rgba(123, 47, 247, 0.5), 0 0 0 4px rgba(123, 47, 247, 0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.ts-add-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.ts-add-btn.wiggle {
+  animation: ts-wiggle 0.4s ease-in-out;
+}
+
+.ts-plus-circle {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* ── Players section ── */
+.ts-players-section {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 24px auto 0;
+}
+
+.ts-section-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ts-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+/* ── Player card ── */
+.ts-card {
+  width: 160px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  animation: ts-cardPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  position: relative;
+}
+
+.ts-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.ts-name-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ts-name-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ts-name-input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ts-remove-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  border: 2px solid #1a0a2e;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s;
+  line-height: 1;
+}
+
+.ts-remove-btn:hover {
+  transform: scale(1.2) rotate(90deg);
+}
+
+.ts-card-num {
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+/* ── Start row ── */
+.ts-start-row {
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+  min-height: 70px;
+}
+
+.ts-start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  padding: 18px 52px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 26px;
+  animation: ts-startPulse 2s ease-in-out infinite;
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+
+.ts-start-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.ts-hint {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+  margin-top: 12px;
+}
+
+/* ── Animations ── */
+@keyframes ts-twinkle {
+  from { opacity: 0.2; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.4); }
+}
+
+@keyframes ts-bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+@keyframes ts-cardPop {
+  from { opacity: 0; transform: scale(0.4) translateY(40px) rotate(-8deg); }
+  to   { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+}
+
+@keyframes ts-wiggle {
+  0%, 100% { transform: scale(1.06) rotate(0deg); }
+  25%       { transform: scale(1.06) rotate(-4deg); }
+  75%       { transform: scale(1.06) rotate(4deg); }
+}
+
+@keyframes ts-startPulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(255, 107, 107, 0.45); }
+  50%       { box-shadow: 0 8px 48px rgba(255, 107, 107, 0.75), 0 0 0 10px rgba(255, 107, 107, 0.1); }
+}
